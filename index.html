@@ -144,6 +144,8 @@ footer p{max-width:75ch;margin:0 0 8px}
 @media (prefers-reduced-motion:reduce){.door{transition:none}.door:hover{transform:none}}
 @media (max-width:480px){.search{flex-direction:column}.btn{width:100%}.search .sicon{display:none}}
 
+html{scroll-behavior:smooth}
+#follow{scroll-margin-top:24px}
 /* Animated door */
 html,body{overflow-x:clip}
 :root{--door:#164044;--door-line:#2a6064;--light1:#fff6d6;--light2:#f4d27a}
@@ -205,7 +207,7 @@ html,body{overflow-x:clip}
 <div class="wrap">
   <header class="top">
     <a class="logo" href="#top" aria-label="ShopPortal home"><span class="logo-mark"><span></span></span><span class="logo-txt">ShopPortal<small>by Aleena Finds</small></span></a>
-    <a class="pin" id="pinTop" href="https://www.pinterest.com/" target="_blank" rel="noopener">Follow on Pinterest</a>
+    <a class="pin" id="followTop" href="#follow">Follow Aleena Finds</a>
   </header>
 
   <div class="hero" id="top">
@@ -309,7 +311,7 @@ html,body{overflow-x:clip}
   </section>
 
   <section>
-    <div class="pinband">
+    <div class="pinband" id="follow">
       <div>
         <h2>Follow Aleena Finds</h2>
         <p>Beauty, fashion and everyday finds, posted every day.</p>
@@ -395,7 +397,7 @@ CATEGORIES.forEach(([t,sub,q])=>{
   b.addEventListener("click",()=>{input.value=q;runSearch(q);document.getElementById("top").scrollIntoView({behavior:"smooth"});});
   cats.appendChild(b);
 });
-document.getElementById("pinTop").href=PINTEREST_URL;
+
 document.getElementById("pinBand").href=PINTEREST_URL;
 runSearch("wireless earbuds");
 
