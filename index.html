@@ -134,6 +134,10 @@ td:first-child{font-weight:700;white-space:nowrap}
 .pinband h2{margin:0;color:var(--bg);font-size:1.6rem}
 .pinband p{margin:6px 0 0;opacity:.8}
 .pinband a{background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;padding:12px 20px;border-radius:12px}
+.socials{display:flex;flex-wrap:wrap;gap:8px}
+.socials a{padding:10px 16px}
+.logo-txt{display:flex;flex-direction:column;line-height:1.05}
+.logo-txt small{font-family:var(--body);font-weight:600;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
 
 footer{padding-block:30px 40px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line);margin-top:20px}
 footer p{max-width:75ch;margin:0 0 8px}
@@ -147,7 +151,7 @@ footer p{max-width:75ch;margin:0 0 8px}
 
 <div class="wrap">
   <header class="top">
-    <a class="logo" href="#top" aria-label="ShopPortal home"><span class="logo-mark"><span></span></span>ShopPortal</a>
+    <a class="logo" href="#top" aria-label="ShopPortal home"><span class="logo-mark"><span></span></span><span class="logo-txt">ShopPortal<small>by Aleena Finds</small></span></a>
     <a class="pin" id="pinTop" href="https://www.pinterest.com/" target="_blank" rel="noopener">Follow on Pinterest</a>
   </header>
 
@@ -248,23 +252,29 @@ footer p{max-width:75ch;margin:0 0 8px}
   <section>
     <div class="pinband">
       <div>
-        <h2>Daily finds on Pinterest</h2>
-        <p>Outfit ideas, budget gadgets and gift lists, posted every day.</p>
+        <h2>Follow Aleena Finds</h2>
+        <p>Beauty, fashion and everyday finds, posted every day.</p>
       </div>
-      <a id="pinBand" href="https://www.pinterest.com/" target="_blank" rel="noopener">Follow ShopPortal</a>
+      <div class="socials">
+        <a id="pinBand" href="https://www.pinterest.com/shopwithsukhleen/" target="_blank" rel="noopener">Pinterest</a>
+        <a href="https://www.instagram.com/findsaleena" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@findsaleena" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.youtube.com/@AleenaFindsBeauty" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.facebook.com/Aleenafinds" target="_blank" rel="noopener">Facebook</a>
+      </div>
     </div>
   </section>
 
   <footer>
     <p><b>Disclosure:</b> ShopPortal contains affiliate links. When you buy through them, we may earn a commission at no extra cost to you. This helps keep the site free.</p>
     <p>ShopPortal is an independent site and is not affiliated with or endorsed by Amazon, eBay, Temu, AliExpress or SHEIN. Store names belong to their owners. As an Amazon Associate we earn from qualifying purchases.</p>
-    <p>© 2026 ShopPortal</p>
+    <p>© 2026 ShopPortal · a site by Aleena Finds</p>
   </footer>
 </div>
 
 <script>
 /* ===== OWNER SETUP: paste your affiliate details here ===== */
-const PINTEREST_URL = "https://www.pinterest.com/";   // your Pinterest profile
+const PINTEREST_URL = "https://www.pinterest.com/shopwithsukhleen/";   // your Pinterest profile
 const STORES = [
   { name:"Amazon", tag:"Everything", desc:"Fast delivery and easy returns on almost anything.",
     home:"https://www.amazon.com/?tag=sukhleenkau0b-20",
