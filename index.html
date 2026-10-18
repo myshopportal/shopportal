@@ -251,6 +251,15 @@ html,body{overflow-x:clip}
 .lk-note{margin:14px 0 0;font-size:.82rem;color:var(--muted)}
 @media (max-width:520px){.lk-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.lk-card{border-radius:90px 90px 14px 14px;padding:6px 6px 10px}.lk-ph{border-radius:84px 84px 10px 10px}.lk-card h3{font-size:1rem}.lk-card .lk-sub{font-size:.8rem}}
 @media (prefers-reduced-motion:reduce){.lk-card{transition:none}.lk-card:hover{transform:none}}
+
+/* Disclosure + privacy */
+.disc-top{margin:4px 0 0;padding:9px 14px;border-radius:12px;background:var(--teal-soft);color:var(--muted);font-size:.82rem;line-height:1.45}
+.disc-top a{color:var(--teal);font-weight:700}
+.disc-mini{margin:12px 0 0;font-size:.8rem;color:var(--muted)}
+.privacy{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.privacy summary{cursor:pointer;font-weight:700;color:var(--ink)}
+.privacy h4{margin:14px 0 4px;color:var(--ink);font-family:var(--display)}
+.privacy p{margin:0 0 8px}
 </style>
 </head>
 <body>
@@ -261,6 +270,7 @@ html,body{overflow-x:clip}
     <a class="logo" href="#top" aria-label="ShopPortal home"><span class="logo-mark"><span></span></span><span class="logo-txt">ShopPortal<small>by Aleena Finds</small></span></a>
     <a class="pin" id="followTop" href="#follow">Follow Aleena Finds</a>
   </header>
+  <p class="disc-top"><span aria-hidden="true">💡</span> ShopPortal is free to use. We may earn a commission when you shop through our links, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. <a href="#privacy">Learn more</a></p>
 
   <div class="hero" id="top">
     <div class="hero-top">
@@ -296,6 +306,7 @@ html,body{overflow-x:clip}
     <div class="results" id="results">
       <h3>Compare <q id="term">wireless earbuds</q> across every store</h3>
       <div class="go-grid" id="goGrid"></div>
+      <p class="disc-mini">We may earn a commission when you buy through these links.</p>
     </div>
   </div>
 
@@ -319,7 +330,7 @@ html,body{overflow-x:clip}
       </div>
     </div>
     <div class="lk-grid" id="lkGrid"></div>
-    <p class="lk-note">All models are AI-generated. Prices and stock are on each store's site.</p>
+    <p class="lk-note">All models are AI-generated. Prices and stock are on each store's site. We may earn a commission when you buy through these links.</p>
   </section>
 
   <section id="tryon">
@@ -362,6 +373,7 @@ html,body{overflow-x:clip}
         <div class="look">
           <h4>Shop this look</h4>
           <div id="lookList"></div>
+          <p class="disc-mini">We may earn a commission when you buy through these links.</p>
         </div>
       </div>
     </div>
@@ -420,6 +432,20 @@ html,body{overflow-x:clip}
     <p><b>Disclosure:</b> ShopPortal contains affiliate links. When you buy through them, we may earn a commission at no extra cost to you. This helps keep the site free.</p>
     <p>ShopPortal is an independent site and is not affiliated with or endorsed by Amazon, eBay, Temu, AliExpress or SHEIN. Store names belong to their owners. As an Amazon Associate we earn from qualifying purchases.</p>
     <p>© 2026 ShopPortal · a site by Aleena Finds</p>
+    <details class="privacy" id="privacy">
+      <summary>Privacy Policy &amp; Affiliate Disclosure</summary>
+      <p><i>Last updated: October 18, 2026</i></p>
+      <h4>Affiliate disclosure</h4>
+      <p>ShopPortal (myshopportal.com) is run by Aleena Finds. Many links on this site are affiliate links. If you click one and make a purchase, we may earn a commission at no extra cost to you. We take part in the Amazon Services LLC Associates Program, eBay Partner Network, the Temu Affiliate Program and other affiliate programs. As an Amazon Associate we earn from qualifying purchases. Some links are regular links that earn nothing.</p>
+      <h4>What we collect</h4>
+      <p>ShopPortal has no accounts, forms or sign-ups, and we do not ask for your name, email or payment details. What you type in the search box is used only to build a link to the store you choose. The Try-On Studio runs in your browser; your choices are not sent to us. We never ask you to upload photos.</p>
+      <h4>Cookies and third parties</h4>
+      <p>When you click a store link, you leave ShopPortal and that store (Amazon, eBay, Temu, AliExpress, SHEIN) or its affiliate network may set cookies to track the visit and any purchase, so the referral can be credited. Their own privacy policies apply on their sites. Our hosting provider may keep basic technical logs (such as IP address and browser type) for security.</p>
+      <h4>AI images</h4>
+      <p>Models in the AI Lookbook and Try-On Studio are AI-generated and do not show real people.</p>
+      <h4>Contact</h4>
+      <p>Questions? Message Aleena Finds on <a href="https://www.instagram.com/findsaleena" target="_blank" rel="noopener">Instagram</a> or <a href="https://www.facebook.com/Aleenafinds" target="_blank" rel="noopener">Facebook</a>.</p>
+    </details>
   </footer>
 </div>
 
@@ -719,6 +745,8 @@ document.querySelectorAll(".lk-filter button").forEach(b=>b.addEventListener("cl
   grid.querySelectorAll(".lk-card").forEach(c=>{c.hidden=!(f==="all"||c.dataset.g===f)});
 }));
 })();
+
+document.querySelectorAll('a[href="#privacy"]').forEach(a=>a.addEventListener("click",()=>{const d=document.getElementById("privacy");if(d)d.open=true}));
 </script>
 
 </body>
