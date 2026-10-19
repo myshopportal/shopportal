@@ -275,6 +275,10 @@ html,body{overflow-x:clip}
 .temu-new b{letter-spacing:.03em}
 .temu-new:hover{border-color:#ff8a3d}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .temu-new{background:#3a2412;color:#ffd2b0;border-color:#6b3d1c}}
+
+.top-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.gift-link{background:var(--accent)!important;color:var(--accent-ink)!important;border-color:var(--accent)!important}
+@media (max-width:480px){.top-links .pin{padding:7px 11px;font-size:.82rem}}
 </style>
 </head>
 <body>
@@ -283,7 +287,7 @@ html,body{overflow-x:clip}
 <div class="wrap">
   <header class="top">
     <a class="logo" href="#top" aria-label="ShopPortal home"><span class="logo-mark"><span></span></span><span class="logo-txt">ShopPortal<small>by Aleena Finds</small></span></a>
-    <a class="pin" id="followTop" href="#follow">Follow Aleena Finds</a>
+    <span class="top-links"><a class="pin gift-link" href="/gifts.html">🎁 Gift Guide</a><a class="pin" id="followTop" href="#follow">Follow Aleena Finds</a></span>
   </header>
   <p class="disc-top"><span aria-hidden="true">💡</span> ShopPortal is free to use. We may earn a commission when you shop through our links, at no extra cost to you. As an Amazon Associate we earn from qualifying purchases. <a href="#privacy">Learn more</a></p>
 
