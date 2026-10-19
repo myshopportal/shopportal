@@ -269,6 +269,12 @@ html,body{overflow-x:clip}
 .privacy summary{cursor:pointer;font-weight:700;color:var(--ink)}
 .privacy h4{margin:14px 0 4px;color:var(--ink);font-family:var(--display)}
 .privacy p{margin:0 0 8px}
+
+/* Temu new-user callout */
+.temu-new{display:inline-block;line-height:1.45;margin:12px 0 0;padding:9px 14px;border-radius:16px;background:#fff1e6;color:#8a3a00;border:1.5px solid #ffc9a3;font-size:.86rem;font-weight:600;text-decoration:none}
+.temu-new b{letter-spacing:.03em}
+.temu-new:hover{border-color:#ff8a3d}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .temu-new{background:#3a2412;color:#ffd2b0;border-color:#6b3d1c}}
 </style>
 </head>
 <body>
@@ -315,6 +321,7 @@ html,body{overflow-x:clip}
     <div class="results" id="results">
       <h3>Compare <q id="term">wireless earbuds</q> across every store</h3>
       <div class="go-grid" id="goGrid"></div>
+      <a class="temu-new" href="https://temu.to/k/p4pq6gzyi9k" target="_blank" rel="noopener sponsored"><span aria-hidden="true">🎁</span> New to Temu? Join with code <b>alf664906</b> for a welcome deal <span aria-hidden="true">→</span></a>
       <p class="disc-mini">We may earn a commission when you buy through these links.</p>
     </div>
   </div>
@@ -339,6 +346,7 @@ html,body{overflow-x:clip}
       </div>
     </div>
     <div class="lk-grid" id="lkGrid"></div>
+        <a class="temu-new" href="https://temu.to/k/p4pq6gzyi9k" target="_blank" rel="noopener sponsored"><span aria-hidden="true">🎁</span> New to Temu? Join with code <b>alf664906</b> for a welcome deal <span aria-hidden="true">→</span></a>
     <p class="lk-note">All models are AI-generated. Prices and stock are on each store's site. We may earn a commission when you buy through these links.</p>
   </section>
 
@@ -382,6 +390,7 @@ html,body{overflow-x:clip}
         <div class="look">
           <h4>Shop this look</h4>
           <div id="lookList"></div>
+          <a class="temu-new" href="https://temu.to/k/p4pq6gzyi9k" target="_blank" rel="noopener sponsored"><span aria-hidden="true">🎁</span> New to Temu? Join with code <b>alf664906</b> for a welcome deal <span aria-hidden="true">→</span></a>
           <p class="disc-mini">We may earn a commission when you buy through these links.</p>
         </div>
       </div>
@@ -488,7 +497,12 @@ const CATEGORIES = [
 
 const enc = s => encodeURIComponent(s.trim()).replace(/%20/g,"+");
 const encDash = s => encodeURIComponent(s.trim().replace(/\s+/g,"-"));
+/* AliExpress affiliate links for fixed searches (from Portals Link Generator). Key = search words, lowercase. */
+const ALI_AFF = {
+  "camel wool coat": "https://s.click.aliexpress.com/e/_c3c4IvZr"
+};
 function link(store,q){
+  if(store.name==="AliExpress"){ const k=q.trim().toLowerCase().replace(/\s+/g," "); if(ALI_AFF[k]) return ALI_AFF[k]; }
   const val = store.name==="AliExpress" ? encDash(q) : store.name==="SHEIN" ? encodeURIComponent(q.trim()) : enc(q);
   return store.search.replace("{q}", val);
 }
